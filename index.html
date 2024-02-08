@@ -85,6 +85,10 @@
         .container-content {
             padding: 20px;
         }
+
+        .alert-success {
+            margin: 20px;
+        }
     </style>
 
 
@@ -106,7 +110,7 @@
     <div class="container mt-5">
 
         <h4>Cómo calificarías el material didáctico disponible?</h4>
-        <form>
+        <form id="encuesta-form">
             <div class="form-group">
                 <label for="select-opcion-material">Selecciona una opción:</label>
                 <select class="form-control" id="select-opcion-material">
@@ -198,9 +202,25 @@
             </div>
 
 
-            <button type="submit" class="btn btn-success">Enviar</button>
-        </form>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+            <div id="mensaje-enviado" class="alert alert-success" style="display: none;">Tu mensaje ha sido enviado
+                satisfactoriamente</div>
     </div>
+    </form>
+
+
+
+    <!-- envio de mensaje satisfactorio al uusuario-->
+    <script>
+        $(document).ready(function () {
+            $('#encuesta-form').submit(function (e) {
+                e.preventDefault();
+                $('#mensaje-enviado').show();
+            });
+        });
+    </script>
+
+
 
     <footer>
         <div class="logo">
