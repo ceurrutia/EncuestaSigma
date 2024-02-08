@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIGMA - Encuesta de satisfacción</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script>
+    $(document).ready(function(){
+        $('#select-opcion-material').change(function(){
+            if($(this).val() == 'No_satisfactorio'){
+                $('#desplegable-opciones-material').show();
+            } else {
+                $('#desplegable-opciones-material').hide();
+            }
+        });
+    
+        $('#select-opcion-plataforma').change(function(){
+            if($(this).val() == 'No_satisfactorio'){
+                $('#desplegable-opciones-curso').show();
+            } else {
+                $('#desplegable-opciones-curso').hide();
+            }
+        });
+    
+        $('#select-opcion-curso').change(function(){
+            if($(this).val() == 'No_satisfactorio'){
+                $('#desplegable-opciones-curso-adicional').show();
+            } else {
+                $('#desplegable-opciones-curso-adicional').hide();
+            }
+        });
+    });
+    </script>
+
+    <style>
+        .logo{
+            
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            margin: 20px;
+            padding: 20px;
+        }
+
+        h1{
+            text-align: center;
+        }
+
+        h3{
+            text-align: center;
+        }
+
+        .container-content{
+            margin:30px;
+
+        }
+
+        footer{
+            background-color: #414141;
+            color:#efefef;
+            height: 100px;
+            bottom: 0;
+        }
+
+        footer p{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container{
+            padding-bottom: 50px;
+        }
+
+        .container-content{
+            padding: 20px;
+        }
+
+    </style>
+    
+    
+</head>
+<body>
+
+    <div class="logo">
+        <img src="img/AGC-logo-gris.png" alt="Logo Agencia Gubernamental de Control" width="300" />
+    </div>
+
+    <div class="container-content">
+
+        <h1> Encuesta de Satisfacción </h1>
+        <h3>Sistema de Gestión de Manipulación de alimentos - SIGMA</h3>
+
+    </div>
+
+    <div class="container mt-5">
+
+        <h4>Cómo calificarías el material didáctico disponible?</h4>
+        <form>
+            <div class="form-group">
+                <label for="select-opcion-material">Selecciona una opción:</label>
+                <select class="form-control" id="select-opcion-material">
+                    <option value="">Selecciona...</option>
+                    <option value="Satisfactorio">Muy satisfactorio</option>
+                    <option value="Satisfactorio">Satisfactorio</option>
+                    <option value="No_satisfactorio">Poco satisfactorio</option>
+                    <option value="No_satisfactorio">No satisfactorio</option>
+                </select>
+            </div>
+    
+            <div class="form-group" id="desplegable-opciones-material" style="display:none;">
+                <label for="razon-material">Razón:</label>
+                <select class="form-control" id="razon-material">
+                    <option value="">Selecciona una opción</option>
+                    <option value="Dificil_entender">El material didáctico me resultó difícil de entender</option>
+                    <option value="Demasiado_largo">El material didáctico es demasiado largo</option>
+                    <option value="No_suficiente">El material didáctico no es suficiente para ver todos los temas</option>
+                    <option value="Dificil_acceso">Es difícil acceder al mismo a través de la plataforma</option>
+                </select>
+            </div>
+    
+            <!-- Experiencia en plataforma -->
+    
+            <h4>¿Cómo calificas tu experiencia en la plataforma SIGMA?</h4>
+    
+            <div class="form-group">
+                <label for="select-opcion-plataforma">Selecciona una opción:</label>
+                <select class="form-control" id="select-opcion-plataforma">
+                    <option value="">Selecciona...</option>
+                    <option value="Satisfactorio">Muy satisfactorio</option>
+                    <option value="Satisfactorio">Satisfactorio</option>
+                    <option value="No_satisfactorio">Poco satisfactorio</option>
+                    <option value="No_satisfactorio">No satisfactorio</option>
+                </select>
+            </div>
+    
+            <div class="form-group" id="desplegable-opciones-curso" style="display:none;">
+                <label for="razon-curso">Razón:</label>
+                <select class="form-control" id="razon-curso">
+                    <option value="">Selecciona una opción</option>
+                    <option value="dificil_uso">Fue difícil utilizarla</option>
+                    <option value="No_guia">No encontré la guía para el usuario</option>
+                    <option value="no_registro_documentacion">Inconvenientes para registrarme y cargar mi documentación</option>
+                    <option value="recuepro_contrasena">Problemas para recuperar mi contraseña</option>
+                    <option value="sin_turno">Dificultad para conseguir el turno</option>
+                    <option value="videos_reproducir">Problemas para reproducir los videos del curso online</option>
+                </select>
+            </div>
+    
+            <!-- Experiencia con el curso -->
+
+            <h4>¿Cuál es tu grado de satisfacción con el curso?</h4>
+    
+            <div class="form-group">
+                <label for="select-opcion-curso">Selecciona una opción:</label>
+                <select class="form-control" id="select-opcion-curso">
+                    <option value="">Selecciona...</option>
+                    <option value="Satisfactorio">Muy satisfactorio</option>
+                    <option value="Satisfactorio">Satisfactorio</option>
+                    <option value="No_satisfactorio">Poco satisfactorio</option>
+                    <option value="No_satisfactorio">No satisfactorio</option>
+                </select>
+            </div>
+    
+    
+            <div class="form-group" id="desplegable-opciones-curso-adicional" style="display:none;">
+                <label for="razon-curso-adicional">Razón:</label>
+                <select class="form-control" id="razon-curso-adicional">
+                    <option value="">Selecciona una opción</option>
+                    <option value="Contenido_no_sirve">Los contenidos no sirven para mi trabajo</option>
+                    <option value="Exposicion_insatisfactoria">La exposición del capacitador o capacitadora no fue buena</option>
+                    <option value="Preguntas_no_relacion">Las preguntas del examen no se relacionan con los contenidos del curso</option>
+                    <option value="Curso_largo">El curso es demasiado largo</option>
+                    <option value="Curso_corto">El curso es demasiado corto para la comprensión de los temas dados</option>
+                    <option value="Recepcion_ingreso">Inconvenientes en la recepción e ingreso al curso/examen</option>
+                </select>
+            </div>
+
+            <!--coemnatrio del usuario -->
+            <div class="form-group">
+                <label for="mensaje">¿Tenés algún comentario acerca de cómo podríamos mejorar tu experiencia? </label>
+                <textarea class="form-control" id="mensaje" rows="3"></textarea>
+            </div>
+    
+    
+            <button type="submit" class="btn btn-success">Enviar</button>
+        </form>
+    </div>
+
+    <footer>
+        <div class="logo"> 
+            <img src="img/ciudad-ba-sm.png" aLT="Logo Ciudad" /> 
+            <img src="img/vamos-ba.png" alt="Vamos"/>
+            <p><strong>Agencia Gubernamental de Control - 2024</strong</p>
+        </div>
+       
+          
+      
+        
+    </footer>
+
+</body>
+</html>
